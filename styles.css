@@ -1,0 +1,134 @@
+  body{
+    margin: 0;
+    padding: 0;
+  }
+
+    .title{
+      margin-top: 20px;
+    }
+
+    #container {
+      width: 400px;
+      height: 100px;
+      position: relative;
+      margin: 0;
+      padding: 0;
+    }
+    #animation {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      margin-left: 0;
+      visibility: hidden;
+    }
+    .btn.btn-info {
+      position: relative;
+      margin-top: -110px !important;
+      margin-left: -140px !important;
+      display:flex;
+      margin: 0;
+      z-index: 120;
+
+    }
+
+   .carousel-item {
+     z-index:99;
+     height: 100vh;
+     min-height: 300px;
+     background: no-repeat center center scroll;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+    }
+
+  .hairstyles {
+    color:black;
+  }
+
+  .myCarousel{
+    position: absolute;
+    top:0;
+  }
+
+  .myNav{
+    position: absolute !important;
+    top:0px !important;
+    width: 100% !important;
+    z-index: 999 !important;
+    background: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .nav-link, .navbar-brand{
+    color:white !important;
+  }
+  .navbar-brand {
+    font-family: cursive!important;
+    font-style: italic !important;
+    font-size: 30px !important;
+    text-decoration: overline;
+  }
+
+  h1{
+    /*position: relative !important;
+    margin-bottom: 400px !important;*/
+  }
+
+ /*#three{
+  background-color: black !important;
+}*/
+  #date {
+    position: absolute;
+    margin-left: 30px;
+    margin-top: -300px;
+    z-index: 200;
+    color:white;
+  }
+@media only screen and (max-width:800px){
+  .container {
+    position: absolute;
+    margin-left:16%;
+  }
+  .btn.btn-info {
+    position: relative;
+    margin-left: 20vw;
+  }
+}
+@media only screen and (max-width: 641px){
+    .container {
+      position: absolute;
+      margin-left:6vw;
+    }
+
+    .btn.btn-info {
+      position: relative;
+      margin-top: 100px;
+      margin-left: 10%;
+    }
+
+    #animation{
+      margin-left: 0;
+
+    }
+}
+
+@media only screen and (max-width: 375px){
+  .container {
+    position: absolute;
+    margin-left: 0px;
+  }
+
+  .btn.btn-info {
+    margin-left: 15vw;
+  }
+
+  #animation{
+    margin-left: 0;
+
+  }
+}
+
+
+    /*} This is for now you should change it for bootstrap*/

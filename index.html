@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <title>Hair Design(Html, Css, Bootstrap-carousel with menu on top, Javascript) </title>
+  </head>
+
+  <body>
+    <div>
+    <nav class="myNav navbar navbar-toggleable-md navbar-light bg-faded container-standard">
+
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a id='brand' class="navbar-brand" href="#">Hair Design Inspire</a>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+          <li class="nav-item active">
+            <a class="nav-link" href="#">MEET OUR TEAM<span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">GALLERY</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">SERVICES AND PRICES</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">HOURS AND CONTACT</a>
+          </li>
+
+
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+  </nav>
+
+    <!--Carousel starts here-->
+    <header>
+      <div id="carouselExampleIndicators" class="myCarousel carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide One - Set the background image for this slide in the line below -->
+          <div class="carousel-item active" style="background-image: url('http://www.9hdw.com/uploads/images/original/2013-07/4060_new-york-city-skyline-at-night.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Located Downtown New York</h1>
+            </div>
+          </div>
+          <!-- Slide Two - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('img/hair.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Amazing Team</h1>
+            </div>
+          </div>
+          <!-- Slide Three - Set the background image for this slide in the line below -->
+          <div id="three" class="carousel-item" style="background-image: url('http://www.tokkoro.com/picsup/2604072-the-witcher-3-wallpaper-downloard.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h1 class="hairstyles">We Don't Create Hairstyles, We Make Art.</h1>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </header>
+  </div>
+
+  <div id='date'> </div>
+
+    <div class="container" align="center" id="container">
+      <img src='https://thumb9.shutterstock.com/display_pic_with_logo/1062323/717669235/stock-vector-black-scissors-icon-vector-illustration-717669235.jpg'id="animation" onclick="myMove()" />
+        <p class="title"></p>
+        <button type="button" class="btn btn-info"
+            onclick="changeText()">Click to See Our New Offer!
+        </button>
+    </div>
+
+
+    <div class="list-of-hairstyles">
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <!-- Javascript starts here -->
+    <script>
+      const header = document.querySelector(".title");
+      const changeTextButton = document.querySelector(".btn.btn-info");
+      const scissors = document.querySelector('#animation');
+      const carousel = document.querySelector('.myCarousel');
+      // const n = document.querySelector('.nav-link').style.color = 'black';
+      function changeText(){
+        header.innerText = "Print this coupon or take a picture of the unique code and bring a friend. 50% off for you and every friend you bring. Ends at the end of the month! Happy holidays!" + "\n "+ "\n" + "Unique code:" + uuidv4(5);
+        header.style.fontSize = "large";
+        header.style.margin = "20px";
+        header.style.border = "dashed";
+        header.style.padding = "50px";
+        changeTextButton.style.visibility = "hidden";
+        scissors.style.visibility = 'visible';
+        carousel.style.visibility = 'hidden';
+      };
+
+      function uuidv4() {
+        return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+          (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+        )
+      }
+
+      function myMove() {
+        let elem = document.getElementById("animation");
+        let pos = 0;
+        let id = setInterval(frame, 20);
+
+        function frame() {
+            if (pos == 350) {
+                clearInterval(id);
+            } else {
+                pos++;
+                elem.style.top = pos + '1000 px';
+                elem.style.left = pos + 'px';
+
+            }
+        }
+      }
+
+      $(document).ready(function() {
+     $('.carousel').carousel({interval: 5000});
+   });
+    </script>
+  </body>
+
+</html>
